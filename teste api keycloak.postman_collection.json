@@ -1,0 +1,193 @@
+{
+	"info": {
+		"_postman_id": "3f8f62ff-00d3-4b5e-a17f-ec4cd7e681b4",
+		"name": "teste api keycloak",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17572927"
+	},
+	"item": [
+		{
+			"name": "solicitando Token validação - role User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "web-app-exemplo",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "bd3db268-30f7-4fde-9117-510c75a2dbed",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "user@user.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/realms/teste-api/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"realms",
+						"teste-api",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "solicitando Token validação - role admin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "web-app-exemplo",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "bd3db268-30f7-4fde-9117-510c75a2dbed",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "user@user.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/realms/teste-api/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"realms",
+						"teste-api",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "testa requisição endpoint security - somente para role User",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJVVzNpZFR5NW10Skgzb00tSnREVy1leDUtaXF6NnYxWTJXd3lRcDRPNlZrIn0.eyJleHAiOjE2NTMzNDExNjQsImlhdCI6MTY1MzM0MDg2NCwianRpIjoiMzI1MzY1NjktNGM1MC00NWJmLTg1MmMtYzM5ODlhODA1MjhiIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL3Rlc3RlLWFwaSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI2YTFlNmIxMi05OGM1LTRmZTYtYmUyMC05OTRjOTY4YmY2YzAiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJ3ZWItYXBwLWV4ZW1wbG8iLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy10ZXN0ZS1hcGkiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfSwid2ViLWFwcC1leGVtcGxvIjp7InJvbGVzIjpbInVtYV9wcm90ZWN0aW9uIl19fSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwiY2xpZW50SG9zdCI6IjE3Mi4xNy4wLjEiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImNsaWVudElkIjoid2ViLWFwcC1leGVtcGxvIiwicHJlZmVycmVkX3VzZXJuYW1lIjoic2VydmljZS1hY2NvdW50LXdlYi1hcHAtZXhlbXBsbyIsImNsaWVudEFkZHJlc3MiOiIxNzIuMTcuMC4xIn0.M1glpwTebtJNdsZZw7d_sO9pqG9Cif-SR3I0nbyyIZ34HQhTTG9ZK32UWMvmb3FDjEY0fMGimQC1tJpbzpCTBAguRXkkReECigOuysa_j7sImkZJXiavwfiPI_7MfBc2jSX6rxOBcaYu5ecat-GcWLQxS6Ad_plWFeC7eTeJs4w6BGCa8IFn6B5WDdUoDRzQBeEww-dyt-2SE7HYyqitVW4N6yDYPCZpDNncwexxMDc-FojGhEs0tY49AZ9JHLOwHwtw4g0vEMdN9rH_CuVho5LFLcZQ51HJVQ6TvZMlH2AT3Qpt8t_K4UWn-eKhunuQeGdREB1Wp_OSbswrisSWCg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8090/security",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"security"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "testa requisição endpoint security não autorizada",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJVVzNpZFR5NW10Skgzb00tSnREVy1leDUtaXF6NnYxWTJXd3lRcDRPNlZrIn0.eyJleHAiOjE2NTMzNDExNjQsImlhdCI6MTY1MzM0MDg2NCwianRpIjoiMzI1MzY1NjktNGM1MC00NWJmLTg1MmMtYzM5ODlhODA1MjhiIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL3Rlc3RlLWFwaSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI2YTFlNmIxMi05OGM1LTRmZTYtYmUyMC05OTRjOTY4YmY2YzAiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJ3ZWItYXBwLWV4ZW1wbG8iLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy10ZXN0ZS1hcGkiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfSwid2ViLWFwcC1leGVtcGxvIjp7InJvbGVzIjpbInVtYV9wcm90ZWN0aW9uIl19fSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwiY2xpZW50SG9zdCI6IjE3Mi4xNy4wLjEiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImNsaWVudElkIjoid2ViLWFwcC1leGVtcGxvIiwicHJlZmVycmVkX3VzZXJuYW1lIjoic2VydmljZS1hY2NvdW50LXdlYi1hcHAtZXhlbXBsbyIsImNsaWVudEFkZHJlc3MiOiIxNzIuMTcuMC4xIn0.M1glpwTebtJNdsZZw7d_sO9pqG9Cif-SR3I0nbyyIZ34HQhTTG9ZK32UWMvmb3FDjEY0fMGimQC1tJpbzpCTBAguRXkkReECigOuysa_j7sImkZJXiavwfiPI_7MfBc2jSX6rxOBcaYu5ecat-GcWLQxS6Ad_plWFeC7eTeJs4w6BGCa8IFn6B5WDdUoDRzQBeEww-dyt-2SE7HYyqitVW4N6yDYPCZpDNncwexxMDc-FojGhEs0tY49AZ9JHLOwHwtw4g0vEMdN9rH_CuVho5LFLcZQ51HJVQ6TvZMlH2AT3Qpt8t_K4UWn-eKhunuQeGdREB1Wp_OSbswrisSWCg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8090/security",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"security"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "testa requisição endpoint security - somente para role de admin",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJVVzNpZFR5NW10Skgzb00tSnREVy1leDUtaXF6NnYxWTJXd3lRcDRPNlZrIn0.eyJleHAiOjE2NTMzNDExNjQsImlhdCI6MTY1MzM0MDg2NCwianRpIjoiMzI1MzY1NjktNGM1MC00NWJmLTg1MmMtYzM5ODlhODA1MjhiIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL3Rlc3RlLWFwaSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI2YTFlNmIxMi05OGM1LTRmZTYtYmUyMC05OTRjOTY4YmY2YzAiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJ3ZWItYXBwLWV4ZW1wbG8iLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy10ZXN0ZS1hcGkiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfSwid2ViLWFwcC1leGVtcGxvIjp7InJvbGVzIjpbInVtYV9wcm90ZWN0aW9uIl19fSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwiY2xpZW50SG9zdCI6IjE3Mi4xNy4wLjEiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImNsaWVudElkIjoid2ViLWFwcC1leGVtcGxvIiwicHJlZmVycmVkX3VzZXJuYW1lIjoic2VydmljZS1hY2NvdW50LXdlYi1hcHAtZXhlbXBsbyIsImNsaWVudEFkZHJlc3MiOiIxNzIuMTcuMC4xIn0.M1glpwTebtJNdsZZw7d_sO9pqG9Cif-SR3I0nbyyIZ34HQhTTG9ZK32UWMvmb3FDjEY0fMGimQC1tJpbzpCTBAguRXkkReECigOuysa_j7sImkZJXiavwfiPI_7MfBc2jSX6rxOBcaYu5ecat-GcWLQxS6Ad_plWFeC7eTeJs4w6BGCa8IFn6B5WDdUoDRzQBeEww-dyt-2SE7HYyqitVW4N6yDYPCZpDNncwexxMDc-FojGhEs0tY49AZ9JHLOwHwtw4g0vEMdN9rH_CuVho5LFLcZQ51HJVQ6TvZMlH2AT3Qpt8t_K4UWn-eKhunuQeGdREB1Wp_OSbswrisSWCg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8090/security",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"security"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
